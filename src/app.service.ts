@@ -17,5 +17,7 @@ export class AppService {
       email: 'test@example.com',
       role_id: 1,
     });
+
+    return 'Hello World!';
   }
 }
