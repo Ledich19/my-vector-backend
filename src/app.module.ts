@@ -4,9 +4,17 @@ import { AppService } from './app.service';
 import { DrizzleModule } from './drizzle/drizzle.module';
 import { EmotionEntrieModule } from './emotion-entrie/emotion-entrie.module';
 import { EmotionsModule } from './emotions/emotions.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [DrizzleModule, EmotionEntrieModule, EmotionsModule],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+    DrizzleModule,
+    EmotionEntrieModule,
+    EmotionsModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
