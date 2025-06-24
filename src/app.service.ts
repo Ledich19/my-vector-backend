@@ -11,7 +11,11 @@ export class AppService {
     private db: NodePgDatabase<typeof schema>,
   ) {}
 
-  getHello(): string {
-    return 'Hello World!';
+  async getHello() {
+    await this.db.insert(schema.users).values({
+      id: '550e8400-e29b-41d4-a716-446655440000',
+      email: 'test@example.com',
+      role_id: 1,
+    });
   }
 }

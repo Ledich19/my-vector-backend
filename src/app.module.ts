@@ -5,6 +5,7 @@ import { DrizzleModule } from './drizzle/drizzle.module';
 import { EmotionEntrieModule } from './emotion-entrie/emotion-entrie.module';
 import { EmotionsModule } from './emotions/emotions.module';
 import { ConfigModule } from '@nestjs/config';
+import { ProtocolsModule } from './protocols/protocols.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { ConfigModule } from '@nestjs/config';
     DrizzleModule,
     EmotionEntrieModule,
     EmotionsModule,
+    ProtocolsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
