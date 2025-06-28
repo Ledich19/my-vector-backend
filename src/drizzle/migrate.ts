@@ -48,7 +48,12 @@ dotenv.config();
       .where(eq(allSchema.emotions.value, emotion.value))
       .limit(1);
 
-    if (!exists?.length) {
+    if (exists?.length) {
+      await db
+        ?.update(allSchema.emotions)
+        .set(emotion)
+        .where(eq(allSchema.emotions.value, emotion.value));
+    } else {
       await db?.insert(allSchema.emotions).values(emotion);
     }
   }
