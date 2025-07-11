@@ -1,7 +1,6 @@
 import {
   pgTable,
   text,
-  uuid,
   integer,
   boolean,
   timestamp,
@@ -13,17 +12,17 @@ import { userPlans } from './userPlans';
 import { emotions } from '../emotions';
 
 export const exerciseLogs = pgTable('exercise_logs', {
-  id: uuid('id').primaryKey().defaultRandom(),
-  userId: uuid('user_id').notNull(),
-  exerciseId: uuid('exercise_id')
+  id: integer('id').primaryKey(),
+  userId: integer('user_id').notNull(),
+  exerciseId: integer('exercise_id')
     .notNull()
     .references(() => exercises.id),
-  userPlanId: uuid('user_plan_id'),
+  userPlanId: integer('user_plan_id'),
   date: timestamp('date').notNull(),
   isCompleted: boolean('is_completed').notNull(),
   rating: integer('rating'),
   notes: text('notes'),
-  emotionId: uuid('emotion_id'),
+  emotionId: integer('emotion_id'),
 });
 
 export const exerciseLogRelations = relations(exerciseLogs, ({ one }) => ({

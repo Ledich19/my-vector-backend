@@ -1,16 +1,16 @@
-import { pgTable, text, uuid, timestamp } from 'drizzle-orm/pg-core';
+import { pgTable, text, integer, timestamp } from 'drizzle-orm/pg-core';
 import { relations, sql } from 'drizzle-orm';
 import { users } from './users';
 import { emotions } from './emotions';
 
 export const emotionEntries = pgTable('emotion_entries', {
-  id: uuid('id').primaryKey().defaultRandom(),
+  id: integer('id').primaryKey(),
 
-  userId: uuid('user_id')
+  userId: integer('user_id')
     .notNull()
     .references(() => users.id, { onDelete: 'cascade' }),
 
-  emotionId: uuid('emotion_id')
+  emotionId: integer('emotion_id')
     .notNull()
     .references(() => emotions.id),
 

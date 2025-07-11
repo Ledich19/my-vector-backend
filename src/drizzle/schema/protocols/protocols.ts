@@ -1,8 +1,8 @@
-import { pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core';
+import { integer, pgTable, text, timestamp } from 'drizzle-orm/pg-core';
 import { sql } from 'drizzle-orm';
 
 export const protocols = pgTable('protocols', {
-  id: serial('id').primaryKey(),
+  id: integer('id').primaryKey(),
   name: text('name').notNull(),
   description: text('description'),
   content: text('content').notNull(),

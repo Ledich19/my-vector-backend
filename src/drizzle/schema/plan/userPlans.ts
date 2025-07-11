@@ -1,4 +1,4 @@
-import { pgTable, uuid, integer, timestamp, index } from 'drizzle-orm/pg-core';
+import { pgTable, integer, timestamp, index } from 'drizzle-orm/pg-core';
 import { planTemplates } from './planTemplates';
 import { relations } from 'drizzle-orm';
 import { userScheduledDays } from './userScheduledDays';
@@ -6,11 +6,11 @@ import { userScheduledDays } from './userScheduledDays';
 export const userPlans = pgTable(
   'user_plans',
   {
-    id: uuid('id').primaryKey().defaultRandom(),
-    templateId: uuid('template_id')
+    id: integer('id').primaryKey(),
+    templateId: integer('template_id')
       .notNull()
       .references(() => planTemplates.id, { onDelete: 'restrict' }),
-    userId: uuid('user_id').notNull(),
+    userId: integer('user_id').notNull(),
     startDate: timestamp('start_date').notNull(),
     repetitions: integer('repetitions'),
   },

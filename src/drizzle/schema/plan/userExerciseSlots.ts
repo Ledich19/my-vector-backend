@@ -1,11 +1,4 @@
-import {
-  pgTable,
-  text,
-  uuid,
-  integer,
-  boolean,
-  index,
-} from 'drizzle-orm/pg-core';
+import { pgTable, text, integer, boolean, index } from 'drizzle-orm/pg-core';
 import { userScheduledDays } from './userScheduledDays';
 import { relations } from 'drizzle-orm';
 import { exercises } from './exercises';
@@ -13,13 +6,13 @@ import { exercises } from './exercises';
 export const userExerciseSlots = pgTable(
   'user_exercise_slots',
   {
-    id: uuid('id').primaryKey().defaultRandom(),
-    userScheduledDayId: uuid('user_scheduled_day_id')
+    id: integer('id').primaryKey(),
+    userScheduledDayId: integer('user_scheduled_day_id')
       .notNull()
       .references(() => userScheduledDays.id, { onDelete: 'cascade' }),
-    templateSlotId: uuid('template_slot_id'), // может быть null при создании нового
+    templateSlotId: integer('template_slot_id'), // может быть null при создании нового
 
-    exerciseId: uuid('exercise_id').references(() => exercises.id, {
+    exerciseId: integer('exercise_id').references(() => exercises.id, {
       onDelete: 'set null',
     }), // может переопределять или быть обязательным при templateSlotId === null
 

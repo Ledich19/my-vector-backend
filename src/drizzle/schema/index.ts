@@ -17,3 +17,10 @@ export * from './plan/exerciseSlotTemplates';
 export * from './plan/userPlans';
 export * from './plan/userScheduledDays';
 export * from './plan/userExerciseSlots';
+
+export * from './surveys/surveys';
+export * from './surveys/surveyQuestions';
+export * from './surveys/surveyAnswerOptions';
+export * from './surveys/surveyUserAnswers';
+export * from './surveys/surveyResults';
+export * from './surveys/surveyScoringThresholds';

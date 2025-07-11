@@ -8,6 +8,7 @@ import { ConfigModule } from '@nestjs/config';
 import { ProtocolsModule } from './protocols/protocols.module';
 import { PlansModule } from './plans/plans.module';
 import { ExercisesModule } from './exercises/exercises.module';
+import { SurveysModule } from './surveys/surveys.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { ExercisesModule } from './exercises/exercises.module';
     ProtocolsModule,
     PlansModule,
     ExercisesModule,
+    SurveysModule,
   ],
   controllers: [AppController],
   providers: [AppService],

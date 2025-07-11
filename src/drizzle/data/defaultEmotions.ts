@@ -1,7 +1,7 @@
 import { Emotion, EmotionCategory } from 'src/common/constants';
 
 const defaultEmotions: {
-  id: string;
+  id: number; // заменил на number
   value: Emotion;
   label: string;
   icon: string;
@@ -9,7 +9,7 @@ const defaultEmotions: {
   color: string;
 }[] = [
   {
-    id: '6ada0d40-7042-472a-aaa5-e0fd9b695a07',
+    id: 1,
     value: 'happy',
     label: 'Счастье',
     icon: '😊',
@@ -17,7 +17,7 @@ const defaultEmotions: {
     color: '#FCD34D',
   },
   {
-    id: 'a1a70ded-9c75-4f87-93ce-261e2d133bdb',
+    id: 2,
     value: 'sad',
     label: 'Грусть',
     icon: '😢',
@@ -25,7 +25,7 @@ const defaultEmotions: {
     color: '#60A5FA',
   },
   {
-    id: '43aa11cb-b6e6-4a30-9f77-34fe8d4faefa',
+    id: 3,
     value: 'angry',
     label: 'Злость',
     icon: '😡',
@@ -33,7 +33,7 @@ const defaultEmotions: {
     color: '#EF4444',
   },
   {
-    id: 'adf8c658-ed8b-4488-8dfd-6f422dc43ded',
+    id: 4,
     value: 'tired',
     label: 'Усталость',
     icon: '😴',
@@ -41,7 +41,7 @@ const defaultEmotions: {
     color: '#9CA3AF',
   },
   {
-    id: '81b5c6d9-2b7f-4c69-bcd5-10aabf07435a',
+    id: 5,
     value: 'anxious',
     label: 'Тревога',
     icon: '😰',
@@ -49,7 +49,7 @@ const defaultEmotions: {
     color: '#F87171',
   },
   {
-    id: '39a705ee-afa4-4a5f-9da4-3202c045712f',
+    id: 6,
     value: 'excited',
     label: 'Восторг',
     icon: '🤩',
@@ -57,7 +57,7 @@ const defaultEmotions: {
     color: '#FBBF24',
   },
   {
-    id: '6256307f-7be1-4593-b9a9-f8bd605212ee',
+    id: 7,
     value: 'neutral',
     label: 'Нейтрально',
     icon: '😐',
@@ -65,7 +65,7 @@ const defaultEmotions: {
     color: '#D1D5DB',
   },
   {
-    id: '6b3f40bb-44a8-477d-b975-1b898f47873f',
+    id: 8,
     value: 'confused',
     label: 'Смущение',
     icon: '😕',
@@ -73,7 +73,7 @@ const defaultEmotions: {
     color: '#A78BFA',
   },
   {
-    id: 'bf27ad8f-aecf-4963-8557-6b0f237d672d',
+    id: 9,
     value: 'bored',
     label: 'Скука',
     icon: '😒',
@@ -81,7 +81,7 @@ const defaultEmotions: {
     color: '#6B7280',
   },
   {
-    id: 'cc140877-922d-40eb-9ad1-21c9b29475b9',
+    id: 10,
     value: 'surprised',
     label: 'Удивление',
     icon: '😲',
@@ -89,7 +89,7 @@ const defaultEmotions: {
     color: '#34D399',
   },
   {
-    id: '8c15a089-c241-4d8f-b524-bb78a97fb700',
+    id: 11,
     value: 'proud',
     label: 'Гордость',
     icon: '😌',
@@ -97,7 +97,7 @@ const defaultEmotions: {
     color: '#F59E0B',
   },
   {
-    id: 'ffba67b2-bab0-4cc4-ad55-8d6723c7dfe4',
+    id: 12,
     value: 'disgusted',
     label: 'Отвращение',
     icon: '🤢',
@@ -105,7 +105,7 @@ const defaultEmotions: {
     color: '#84CC16',
   },
   {
-    id: 'ff57f628-53a8-4061-8da7-ff8f13964b33',
+    id: 13,
     value: 'fearful',
     label: 'Страх',
     icon: '😨',
@@ -113,7 +113,7 @@ const defaultEmotions: {
     color: '#F87171',
   },
   {
-    id: '3cf82380-cb82-480b-8624-c8b32eb05508',
+    id: 14,
     value: 'lonely',
     label: 'Одиночество',
     icon: '😔',
@@ -121,7 +121,7 @@ const defaultEmotions: {
     color: '#60A5FA',
   },
   {
-    id: '04433c57-ccb6-4153-a9ab-eea7babd6832',
+    id: 15,
     value: 'hopeful',
     label: 'Надежда',
     icon: '🙏',
@@ -129,7 +129,7 @@ const defaultEmotions: {
     color: '#34D399',
   },
   {
-    id: 'bbeb9cff-704e-44c6-8d5b-95d7a4380172',
+    id: 16,
     value: 'relaxed',
     label: 'Расслабленность',
     icon: '😌',
@@ -137,7 +137,7 @@ const defaultEmotions: {
     color: '#6EE7B7',
   },
   {
-    id: 'c6cf62c4-b217-409e-940a-35370b6aeab2',
+    id: 17,
     value: 'love',
     label: 'Любовь',
     icon: '❤️',
@@ -145,7 +145,7 @@ const defaultEmotions: {
     color: '#F43F5E',
   },
   {
-    id: '759ff8b3-0a87-4b39-a3b3-6a402f9f8e0c',
+    id: 18,
     value: 'grateful',
     label: 'Благодарность',
     icon: '🤗',
@@ -153,7 +153,7 @@ const defaultEmotions: {
     color: '#FCD34D',
   },
   {
-    id: '924b7e07-2e1a-4e7b-bb19-022f187a0cc4',
+    id: 19,
     value: 'frustrated',
     label: 'Разочарование',
     icon: '😣',
@@ -161,7 +161,7 @@ const defaultEmotions: {
     color: '#F87171',
   },
   {
-    id: 'c3eaff47-0f24-4b56-bf4d-948c4588b63f',
+    id: 20,
     value: 'shame',
     label: 'Стыд',
     icon: '😳',
@@ -169,7 +169,7 @@ const defaultEmotions: {
     color: '#FCA5A5',
   },
   {
-    id: '6e9de0a3-3e5f-4d46-918d-15eb17cce5de',
+    id: 21,
     value: 'guilt',
     label: 'Вина',
     icon: '😓',
@@ -177,7 +177,7 @@ const defaultEmotions: {
     color: '#E5E7EB',
   },
   {
-    id: 'b80378d1-87e0-46c8-850b-770c3b79b438',
+    id: 22,
     value: 'jealous',
     label: 'Ревность',
     icon: '😒',
@@ -185,7 +185,7 @@ const defaultEmotions: {
     color: '#A3A3A3',
   },
   {
-    id: '72e05527-9963-4f2e-9f89-23a0c3fead5a',
+    id: 23,
     value: 'embarrassed',
     label: 'Неловкость',
     icon: '😅',

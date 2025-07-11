@@ -1,1 +1,0 @@
-ALTER TABLE "protocols" ADD COLUMN "content" text NOT NULL;
