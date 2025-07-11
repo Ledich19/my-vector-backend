@@ -1,0 +1,29 @@
+import { pgTable, uuid, integer, index } from 'drizzle-orm/pg-core';
+import { planTemplates } from './planTemplates';
+import { relations } from 'drizzle-orm';
+import { exerciseSlotTemplates } from './exerciseSlotTemplates';
+
+export const scheduledDayTemplates = pgTable(
+  'scheduled_day_templates',
+  {
+    id: uuid('id').primaryKey().defaultRandom(),
+    planTemplateId: uuid('plan_template_id')
+      .notNull()
+      .references(() => planTemplates.id, { onDelete: 'cascade' }),
+    dayNumber: integer('day_number').notNull(),
+  },
+  (table) => [
+    index('idx_plan_template_id_day_number').on(table.planTemplateId),
+  ],
+);
+
+export const scheduledDayTemplateRelations = relations(
+  scheduledDayTemplates,
+  ({ one, many }) => ({
+    planTemplate: one(planTemplates, {
+      fields: [scheduledDayTemplates.planTemplateId],
+      references: [planTemplates.id],
+    }),
+    slots: many(exerciseSlotTemplates),
+  }),
+);
