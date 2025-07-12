@@ -2,10 +2,10 @@ import { ApiPropertyOptional, ApiProperty } from '@nestjs/swagger';
 
 export class UpdateExerciseSlotTemplateDto {
   @ApiProperty({ type: String, description: 'ID слота упражнения' })
-  id: string;
+  id: number;
 
   @ApiPropertyOptional({ type: String, description: 'ID упражнения' })
-  exerciseId: string;
+  exerciseId: number;
 
   @ApiPropertyOptional({
     type: String,
@@ -22,7 +22,7 @@ export class UpdateExerciseSlotTemplateDto {
 
 export class UpdateScheduledDayTemplateDto {
   @ApiProperty({ type: String, description: 'ID дня шаблона' })
-  id: string;
+  id: number;
 
   @ApiPropertyOptional({ type: Number, description: 'Номер дня в плане' })
   dayNumber: number;

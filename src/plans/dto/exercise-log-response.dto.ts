@@ -2,13 +2,13 @@ import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 export class ExerciseLogResponseDto {
   @ApiProperty({ format: 'uuid' })
-  id: string;
+  id: number;
 
   @ApiProperty({ format: 'uuid' })
-  userId: string;
+  userId: number;
 
   @ApiProperty({ format: 'uuid' })
-  exerciseId: string;
+  exerciseId: number;
 
   @ApiPropertyOptional({ format: 'uuid' })
   userPlanId?: string;

@@ -1,11 +1,11 @@
-import { pgTable, text, integer } from 'drizzle-orm/pg-core';
+import { pgTable, text, integer, serial } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm';
 import { surveyResults } from './surveyResults';
 import { surveyQuestions } from './surveyQuestions';
 import { surveyAnswerOptions } from './surveyAnswerOptions';
 
 export const surveyUserAnswers = pgTable('survey_user_answers', {
-  id: integer('id').primaryKey(),
+  id: serial('id').primaryKey(),
   resultId: integer('result_id')
     .notNull()
     .references(() => surveyResults.id, { onDelete: 'cascade' }),

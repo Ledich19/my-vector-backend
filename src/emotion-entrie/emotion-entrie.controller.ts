@@ -47,21 +47,21 @@ export class EmotionEntrieController {
   @ApiOkResponse({ type: GetEmotionEntriesResponseDto, isArray: true })
   findByUserId(
     @Query() dto: FindEmotionEntriesQueryDto,
-    @Param('userId') userId: string,
+    @Param('userId') userId: number,
   ) {
     return this.emotion.findByUserId(dto, userId);
   }
 
   @Get('user/:userId/count')
   @ApiOkResponse({ type: CountEmotionsByUserIdResponse, isArray: true })
-  countEmotionsByUserId(@Param('userId') userId: string) {
+  countEmotionsByUserId(@Param('userId') userId: number) {
     return this.emotion.countEmotionsByUserId(userId);
   }
 
   @Get(':id')
   @ApiOkResponse({ type: EmotionEntryDTO })
   @ApiNotFoundResponse()
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id') id: number) {
     return this.emotion.findOne(id);
   }
 
@@ -69,7 +69,7 @@ export class EmotionEntrieController {
   @ApiOkResponse({ type: EmotionEntryDTO })
   @ApiNotFoundResponse()
   update(
-    @Param('id') id: string,
+    @Param('id') id: number,
     @Body() updateEmotionEntrieDto: UpdateEmotionEntrieDto,
   ) {
     return this.emotion.update(id, updateEmotionEntrieDto);
@@ -78,7 +78,7 @@ export class EmotionEntrieController {
   @Delete(':id')
   @ApiOkResponse({ type: EmotionEntryDTO })
   @ApiNotFoundResponse()
-  remove(@Param('id') id: string) {
+  remove(@Param('id') id: number) {
     return this.emotion.remove(id);
   }
 }

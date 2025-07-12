@@ -1,23 +1,23 @@
-import { IsString, IsUUID, IsDate } from 'class-validator';
+import { IsString, IsDate, IsInt } from 'class-validator';
 import { Type } from 'class-transformer';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class EmotionEntryDTO {
   @ApiProperty({ example: '550e8400-e29b-41d4-a716-446655440000' })
-  @IsUUID()
-  id: string;
+  @IsInt()
+  id: number;
 
   @ApiProperty({ example: 'Went for a run' })
   @IsString()
   actions: string;
 
   @ApiProperty({ example: '550e8400-e29b-41d4-a716-446655440000' })
-  @IsUUID()
-  userId: string;
+  @IsInt()
+  userId: number;
 
   @ApiProperty({ example: '550e8400-e29b-41d4-a716-446655440000' })
-  @IsUUID()
-  emotionId: string;
+  @IsInt()
+  emotionId: number;
 
   @ApiProperty({ example: 'At the park' })
   @IsString()

@@ -50,7 +50,7 @@ enum ExerciseTypeEnum {
 
 // Шаблон плана — неизменяемый
 type PlanTemplate = {
-  id: string
+  id: number
   title: string
   description?: string
   days: ScheduledDayTemplate[]
@@ -59,15 +59,15 @@ type PlanTemplate = {
 
 // День в шаблоне
 type ScheduledDayTemplate = {
-  id: string
+  id: number
   dayNumber: number
   exerciseSlots: ExerciseSlotTemplate[]
 }
 
 // Упражнение в дне шаблона
 type ExerciseSlotTemplate = {
-  id: string
-  exerciseId: string
+  id: number
+exerciseId: number
   time?: string
   repetitions?: number
   durationSeconds?: number
@@ -77,18 +77,18 @@ type ExerciseSlotTemplate = {
 
 // Конкретный пользовательский план
 type UserPlan = {
-  id: string
-  templateId: string
-  userId: string
+  id: number
+  templateId: number
+  userid: number
   startDate: string
   repetitions?: number
 }
 
 // Кастомизация дня
 type UserScheduledDay = {
-  id: string
-  userPlanId: string
-  templateDayId: string
+  id: number
+  userPlanId: number
+  templateDayId: number
   date?: string
   dayNumber?: number
   notes?: string
@@ -96,10 +96,10 @@ type UserScheduledDay = {
 
 // Кастомизация упражнения
 type UserExerciseSlot = {
-  id: string
-  userScheduledDayId: string
+  id: number
+  userScheduledDayId: number
   templateSlotId?: string // может отсутствовать, если это новый слот
-  exerciseId?: string
+exerciseId?: string
   time?: string
   repetitions?: number
   durationSeconds?: number
@@ -109,7 +109,7 @@ type UserExerciseSlot = {
 // === Общие сущности ===
 
 type Exercise = {
-  id: string
+  id: number
   title: string
   description?: string
   exerciseType: ExerciseTypeEnum
@@ -118,9 +118,9 @@ type Exercise = {
 }
 
 type ExerciseLog = {
-  id: string
-  userId: string
-  exerciseId: string
+  id: number
+  userid: number
+exerciseId: number
   userPlanId?: string
   date: string
   isCompleted: boolean
@@ -157,7 +157,7 @@ type ExerciseLog = {
 // содержит дни с упражнениями без конкретных дат,
 // используется как исходник для пользовательских планов
 type PlanTemplate = {
-  id: string
+  id: number
   title: string
   description?: string
   days: ScheduledDayTemplate[]
@@ -169,9 +169,9 @@ type PlanTemplate = {
 // содержит дату начала и возможные кастомизации,
 // в базе один UserPlan ссылается на один PlanTemplate
 type UserPlan = {
-  id: string
-  templateId: string // ссылка на PlanTemplate
-  userId: string
+  id: number
+  templateId: number // ссылка на PlanTemplate
+  userid: number
   startDate: string // дата начала выполнения плана пользователем
   repetitions?: number // может переопределять repetitions из шаблона
   isTemplate: false
@@ -180,7 +180,7 @@ type UserPlan = {
 // День в шаблоне — часть неизменяемого шаблона,
 // содержит порядковый номер и упражнения на этот день
 type ScheduledDayTemplate = {
-  id: string
+  id: number
   dayNumber: number // порядковый номер дня в плане
   exerciseSlots: ExerciseSlotTemplate[] // упражнения в этот день
 }
@@ -188,9 +188,9 @@ type ScheduledDayTemplate = {
 // День пользователя — кастомизации и метаданные для дня,
 // привязан к дню шаблона, содержит конкретную дату и дополнительные поля
 type UserScheduledDay = {
-  id: string
-  userPlanId: string
-  templateDayId: string
+  id: number
+  userPlanId: number
+  templateDayId: number
   date?: string // рассчитанная дата для userPlan (startDate + dayNumber - 1)
   dayNumber?: number // при кастомизации может отличаться от шаблона
   notes?: string // дополнительные заметки пользователя к дню
@@ -199,8 +199,8 @@ type UserScheduledDay = {
 // Упражнение в шаблоне — базовое описание слота,
 // содержит ссылку на упражнение и параметры по умолчанию
 type ExerciseSlotTemplate = {
-  id: string
-  exerciseId: string
+  id: number
+exerciseId: number
   time?: string // время выполнения в дне (например, "08:00")
   repetitions?: number
   durationSeconds?: number
@@ -210,10 +210,10 @@ type ExerciseSlotTemplate = {
 // параметры упражнения, менять упражнение, менять время, количество повторений и др.
 // Привязана к слоту шаблона и дню пользователя
 type UserExerciseSlot = {
-  id: string
-  userScheduledDayId: string
-  templateSlotId: string // ссылка на ExerciseSlotTemplate
-  exerciseId?: string // если пользователь заменил упражнение
+  id: number
+  userScheduledDayId: number
+  templateSlotid: number // ссылка на ExerciseSlotTemplate
+exerciseId?: string // если пользователь заменил упражнение
   time?: string
   repetitions?: number
   durationSeconds?: number
@@ -221,26 +221,26 @@ type UserExerciseSlot = {
 
 // Основное упражнение — описание упражнения с типом и форматом ввода
 type Exercise = {
-  id: string
+  id: number
   title: string
   description?: string
-  exerciseTypeId: string
+  exerciseTypeid: number
   practiceType: PracticeType
   inputFormat: 'repetition' | 'duration' | 'text' | 'boolean'
 }
 
 // Тип упражнения — классификация упражнений (например, физическое, когнитивное)
 type ExerciseType = {
-  id: string
+  id: number
   name: string
 }
 
 // Лог выполнения упражнения пользователем,
 // фиксирует факт выполнения, дату, оценки и заметки
 type ExerciseLog = {
-  id: string
-  userId: string
-  exerciseId: string
+  id: number
+  userid: number
+exerciseId: number
   userPlanId?: string // ссылка на пользовательский план
   date: string // дата выполнения
   isCompleted: boolean

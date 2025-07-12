@@ -1,9 +1,9 @@
-import { pgTable, text, integer } from 'drizzle-orm/pg-core';
+import { pgTable, text, integer, serial } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm';
 import { surveys } from './surveys';
 
 export const surveyScoringThresholds = pgTable('survey_scoring_thresholds', {
-  id: integer('id').primaryKey(),
+  id: serial('id').primaryKey(),
   surveyId: integer('survey_id')
     .notNull()
     .references(() => surveys.id, { onDelete: 'cascade' }),

@@ -1,11 +1,11 @@
-import { IsUUID, IsOptional, IsInt, Min } from 'class-validator';
+import {  IsOptional, IsInt, Min } from 'class-validator';
 import { Type } from 'class-transformer';
 import { ApiPropertyOptional, ApiProperty } from '@nestjs/swagger';
 export class FindEmotionEntriesQueryDto {
   @ApiPropertyOptional({ example: 'b3cb9d15-3e52-43cb-9021-1c6d9f46ed83' })
-  @IsUUID()
+  @IsInt()
   @IsOptional()
-  emotionId?: string;
+  emotionId?: number;
 
   @ApiProperty({ example: 1 })
   @IsInt()

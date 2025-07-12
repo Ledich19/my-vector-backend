@@ -4,7 +4,7 @@ import type { Emotion } from 'src/common/constants';
 
 export class EmotionResponseDto {
   @ApiProperty({ example: '' })
-  id: string;
+  id:  number;
 
   @ApiProperty({ enum: emotionValues })
   value: Emotion;

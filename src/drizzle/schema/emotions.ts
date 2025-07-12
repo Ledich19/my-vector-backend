@@ -1,4 +1,4 @@
-import { pgEnum, pgTable, text, integer } from 'drizzle-orm/pg-core';
+import { pgEnum, pgTable, text, serial } from 'drizzle-orm/pg-core';
 import { emotionCategories, emotionValues } from 'src/common/constants';
 
 export const emotionEnum = pgEnum('emotion_enum', [...emotionValues]);
@@ -8,7 +8,7 @@ export const emotionCategoryEnum = pgEnum('emotion_category_enum', [
 ]);
 
 export const emotions = pgTable('emotions', {
-  id: integer('id').primaryKey(),
+  id: serial('id').primaryKey(),
   value: emotionEnum('value').notNull(),
   label: text('label').notNull(),
   icon: text('icon').default(''),

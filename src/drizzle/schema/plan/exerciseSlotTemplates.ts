@@ -1,10 +1,10 @@
-import { pgTable, text, integer } from 'drizzle-orm/pg-core';
+import { pgTable, text, integer, serial } from 'drizzle-orm/pg-core';
 import { scheduledDayTemplates } from './scheduledDayTemplates';
 import { exercises } from './exercises';
 import { relations } from 'drizzle-orm';
 
 export const exerciseSlotTemplates = pgTable('exercise_slot_templates', {
-  id: integer('id').primaryKey(),
+  id: serial('id').primaryKey(),
   scheduledDayTemplateId: integer('scheduled_day_template_id')
     .notNull()
     .references(() => scheduledDayTemplates.id),

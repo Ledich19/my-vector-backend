@@ -27,7 +27,7 @@ export class EmotionEntrieService {
     return this.db.query.emotionEntries.findMany({});
   }
 
-  async findOne(id: string) {
+  async findOne(id: number) {
     const result = await this.db.query.emotionEntries.findFirst({
       where: eq(schema.emotionEntries.id, id),
     });
@@ -39,7 +39,7 @@ export class EmotionEntrieService {
     return result;
   }
 
-  async findByUserId(dto: FindEmotionEntriesQueryDto, userId: string) {
+  async findByUserId(dto: FindEmotionEntriesQueryDto, userId: number) {
     const offset = (dto.page - 1) * dto.limit;
 
     const conditions = [eq(schema.emotionEntries.userId, userId)];
@@ -71,7 +71,7 @@ export class EmotionEntrieService {
     };
   }
 
-  async countEmotionsByUserId(userId: string) {
+  async countEmotionsByUserId(userId: number) {
     const result = await this.db
       .select({
         emotionId: schema.emotionEntries.emotionId,
@@ -94,7 +94,7 @@ export class EmotionEntrieService {
     return result;
   }
 
-  async update(id: string, dto: UpdateEmotionEntrieDto) {
+  async update(id: number, dto: UpdateEmotionEntrieDto) {
     const [updated] = await this.db
       .update(schema.emotionEntries)
       .set(dto)
@@ -108,7 +108,7 @@ export class EmotionEntrieService {
     return updated;
   }
 
-  async remove(id: string) {
+  async remove(id: number) {
     const [deleted] = await this.db
       .delete(schema.emotionEntries)
       .where(eq(schema.emotionEntries.id, id))

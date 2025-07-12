@@ -1,14 +1,14 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { IsUUID, IsDateString, IsInt, IsOptional } from 'class-validator';
+import { IsDateString, IsInt, IsOptional } from 'class-validator';
 export class GetExerciseLogsFilterDto {
   @ApiProperty({ type: String, format: 'uuid' })
-  @IsUUID()
-  userId: string;
+  @IsInt()
+  userId: number;
 
   @ApiPropertyOptional({ type: String, format: 'uuid' })
-  @IsUUID()
+  @IsInt()
   @IsOptional()
-  userPlanId?: string;
+  userPlanId?: number;
 
   @ApiPropertyOptional({ type: String, format: 'date-time' })
   @IsDateString()

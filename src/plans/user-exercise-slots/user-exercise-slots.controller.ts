@@ -15,7 +15,7 @@ export class UserExerciseSlotsController {
   constructor(private readonly service: UserExerciseSlotsService) {}
 
   // @Get(':dayId')
-  // getSlots(@Param('dayId') dayId: string) {
+  // getSlots(@Param('dayId') dayId:  number) {
   //   return this.service.getSlotsByDay(dayId);
   // }
 
@@ -25,12 +25,12 @@ export class UserExerciseSlotsController {
   // }
 
   // @Patch(':id')
-  // update(@Param('id') id: string, @Body() dto: UpdateUserExerciseSlotDto) {
+  // update(@Param('id') id:  number, @Body() dto: UpdateUserExerciseSlotDto) {
   //   return this.service.update(id, dto);
   // }
 
   // @Delete(':id')
-  // delete(@Param('id') id: string) {
+  // delete(@Param('id') id:  number) {
   //   return this.service.delete(id);
   // }
 }

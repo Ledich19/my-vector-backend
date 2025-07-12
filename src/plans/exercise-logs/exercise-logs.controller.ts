@@ -42,7 +42,7 @@ export class ExerciseLogsController {
   @ApiOperation({ summary: 'Get exercise log by id' })
   @ApiResponse({ status: 200, type: ExerciseLogResponseDto })
   @ApiParam({ name: 'id', type: 'string', format: 'uuid' })
-  async findOne(@Param('id', ParseUUIDPipe) id: string) {
+  async findOne(@Param('id', ParseUUIDPipe) id:  number) {
     const log = await this.service.getById(id);
     return log;
   }
@@ -52,7 +52,7 @@ export class ExerciseLogsController {
   @ApiResponse({ status: 200, type: ExerciseLogResponseDto })
   @ApiParam({ name: 'id', type: 'string', format: 'uuid' })
   async update(
-    @Param('id', ParseUUIDPipe) id: string,
+    @Param('id', ParseUUIDPipe) id:  number,
     @Body() dto: UpdateExerciseLogDto,
   ) {
     const updated = await this.service.update(id, dto);
@@ -63,7 +63,7 @@ export class ExerciseLogsController {
   @ApiOperation({ summary: 'Delete exercise log by id' })
   @ApiResponse({ status: 204 })
   @ApiParam({ name: 'id', type: 'string', format: 'uuid' })
-  async remove(@Param('id', ParseUUIDPipe) id: string) {
+  async remove(@Param('id', ParseUUIDPipe) id:  number) {
     await this.service.delete(id);
   }
 }

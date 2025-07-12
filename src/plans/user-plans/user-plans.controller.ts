@@ -26,17 +26,17 @@ export class UserPlansController {
   // }
 
   // @Get(':userId')
-  // getUserPlans(@Param('userId', ParseUUIDPipe) userId: string) {
+  // getUserPlans(@Param('userId', ParseUUIDPipe) userId:  number) {
   //   return this.service.getPlansByUser(userId);
   // }
 
   // @Get(':userId/full')
-  // getFullPlans(@Param('userId', ParseUUIDPipe) userId: string) {
+  // getFullPlans(@Param('userId', ParseUUIDPipe) userId:  number) {
   //   return this.service.getFullUserPlans(userId);
   // }
 
   // @Delete(':planId')
-  // delete(@Param('planId', ParseUUIDPipe) planId: string) {
+  // delete(@Param('planId', ParseUUIDPipe) planId:  number) {
   //   return this.service.deleteUserPlan(planId);
   // }
 }

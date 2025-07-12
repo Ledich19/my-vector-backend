@@ -1,6 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import {
-  IsUUID,
   IsDateString,
   IsBoolean,
   IsInt,
@@ -10,17 +9,17 @@ import {
 
 export class CreateExerciseLogDto {
   @ApiProperty({ type: String, format: 'uuid' })
-  @IsUUID()
-  userId: string;
+  @IsInt()
+  userId: number;
 
   @ApiProperty({ type: String, format: 'uuid' })
-  @IsUUID()
-  exerciseId: string;
+  @IsInt()
+  exerciseId: number;
 
   @ApiPropertyOptional({ type: String, format: 'uuid' })
-  @IsUUID()
+  @IsInt()
   @IsOptional()
-  userPlanId?: string;
+  userPlanId?: number;
 
   @ApiProperty({ type: String, format: 'date-time' })
   @IsDateString()
@@ -41,7 +40,7 @@ export class CreateExerciseLogDto {
   notes?: string;
 
   @ApiPropertyOptional({ type: String, format: 'uuid' })
-  @IsUUID()
+  @IsInt()
   @IsOptional()
-  emotionId?: string;
+  emotionId?: number;
 }

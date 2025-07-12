@@ -53,7 +53,7 @@ export class ExerciseLogsService {
       .offset((page - 1) * pageSize);
   }
 
-  async update(id: string, data: UpdateExerciseLogDto) {
+  async update(id: number, data: UpdateExerciseLogDto) {
     const updateData = {
       ...data,
       date: data.date ? new Date(data.date) : undefined,
@@ -65,13 +65,13 @@ export class ExerciseLogsService {
       .where(eq(schema.exerciseLogs.id, id));
   }
 
-  async delete(id: string) {
+  async delete(id: number) {
     return this.db
       .delete(schema.exerciseLogs)
       .where(eq(schema.exerciseLogs.id, id));
   }
 
-  async getById(id: string) {
+  async getById(id: number) {
     const log = await this.db
       .select()
       .from(schema.exerciseLogs)

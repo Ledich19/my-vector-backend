@@ -6,7 +6,7 @@ import { PracticeType, practiceTypes } from 'src/common/types/practice-types';
 
 export class ExerciseResponseDto {
   @ApiProperty({ type: 'string', format: 'uuid' })
-  id: string;
+  id:  number;
 
   @ApiProperty({ type: 'string' })
   title: string;

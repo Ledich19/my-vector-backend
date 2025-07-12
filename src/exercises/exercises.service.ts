@@ -26,13 +26,13 @@ export class ExercisesService {
     return this.db.select().from(schema.exercises);
   }
 
-  async findOne(id: string) {
+  async findOne(id:  number) {
     return this.db.query.exercises.findFirst({
       where: eq(schema.exercises.id, id),
     });
   }
 
-  async update(id: string, dto: UpdateExerciseDto) {
+  async update(id:  number, dto: UpdateExerciseDto) {
     const [updated] = await this.db
       .update(schema.exercises)
       .set(dto)
@@ -41,7 +41,7 @@ export class ExercisesService {
     return updated;
   }
 
-  async remove(id: string) {
+  async remove(id:  number) {
     return this.db.delete(schema.exercises).where(eq(schema.exercises.id, id));
   }
 }

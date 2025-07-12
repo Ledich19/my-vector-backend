@@ -52,7 +52,7 @@ export class ProtocolsController {
     description: 'Protocol found',
     type: ProtocolDto,
   })
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id') id:  number) {
     return this.protocolsService.findOne(+id);
   }
 
@@ -60,7 +60,7 @@ export class ProtocolsController {
   @ApiOperation({ summary: 'Delete a protocol by ID' })
   @ApiParam({ name: 'id', type: Number })
   @ApiResponse({ status: 200, description: 'Protocol successfully deleted' })
-  remove(@Param('id') id: string) {
+  remove(@Param('id') id:  number) {
     return this.protocolsService.remove(+id);
   }
 }

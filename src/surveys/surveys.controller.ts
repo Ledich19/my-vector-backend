@@ -18,17 +18,17 @@ export class SurveysController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id') id:  number) {
     return this.surveysService.findOne(+id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateSurveyDto: UpdateSurveyDto) {
+  update(@Param('id') id:  number, @Body() updateSurveyDto: UpdateSurveyDto) {
     return this.surveysService.update(+id, updateSurveyDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
+  remove(@Param('id') id:  number) {
     return this.surveysService.remove(+id);
   }
 }

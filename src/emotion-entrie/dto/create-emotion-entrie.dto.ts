@@ -1,6 +1,6 @@
 // Файл: create-emotion-entrie.dto.ts
 
-import { IsString, IsUUID } from 'class-validator';
+import { IsInt, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 import { Exclude, Expose } from 'class-transformer';
 
@@ -12,14 +12,14 @@ export class CreateEmotionEntrieDto {
   actions: string;
 
   @ApiProperty({ example: '550e8400-e29b-41d4-a716-446655440000' })
-  @IsUUID()
+  @IsInt()
   @Expose()
-  userId: string;
+  userId: number;
 
   @Expose()
   @ApiProperty({ example: '550e8400-e29b-41d4-a716-446655440000' })
-  @IsUUID()
-  emotionId: string;
+  @IsInt()
+  emotionId: number;
 
   @ApiProperty({ example: 'Saw a friend unexpectedly' })
   @IsString()

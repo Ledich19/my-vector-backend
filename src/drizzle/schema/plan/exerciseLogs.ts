@@ -4,6 +4,7 @@ import {
   integer,
   boolean,
   timestamp,
+  serial,
 } from 'drizzle-orm/pg-core';
 import { exercises } from './exercises';
 import { relations } from 'drizzle-orm';
@@ -12,7 +13,7 @@ import { userPlans } from './userPlans';
 import { emotions } from '../emotions';
 
 export const exerciseLogs = pgTable('exercise_logs', {
-  id: integer('id').primaryKey(),
+  id: serial('id').primaryKey(),
   userId: integer('user_id').notNull(),
   exerciseId: integer('exercise_id')
     .notNull()

@@ -1,4 +1,4 @@
-import { pgTable, text, integer, pgEnum } from 'drizzle-orm/pg-core';
+import { pgTable, text, integer, pgEnum, serial } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm';
 import { surveys } from './surveys';
 import { surveyAnswerOptions } from './surveyAnswerOptions';
@@ -8,7 +8,7 @@ import { questionTypes } from 'src/common/types/question-types';
 export const questionTypeEnum = pgEnum('question_type_enum', questionTypes);
 
 export const surveyQuestions = pgTable('survey_questions', {
-  id: integer('id').primaryKey(),
+  id: serial('id').primaryKey(),
   surveyId: integer('survey_id')
     .notNull()
     .references(() => surveys.id, { onDelete: 'cascade' }),

@@ -1,4 +1,4 @@
-import { pgTable, integer, index } from 'drizzle-orm/pg-core';
+import { pgTable, integer, index, serial } from 'drizzle-orm/pg-core';
 import { planTemplates } from './planTemplates';
 import { relations } from 'drizzle-orm';
 import { exerciseSlotTemplates } from './exerciseSlotTemplates';
@@ -6,7 +6,7 @@ import { exerciseSlotTemplates } from './exerciseSlotTemplates';
 export const scheduledDayTemplates = pgTable(
   'scheduled_day_templates',
   {
-    id: integer('id').primaryKey(),
+    id: serial('id').primaryKey(),
     planTemplateId: integer('plan_template_id')
       .notNull()
       .references(() => planTemplates.id, { onDelete: 'cascade' }),

@@ -33,14 +33,14 @@ export class ExercisesController {
 
   @Get(':id')
   @ApiOperation({ summary: 'Получить упражнение по ID' })
-  findOne(@Param('id', ParseUUIDPipe) id: string) {
+  findOne(@Param('id', ParseUUIDPipe) id:  number) {
     return this.service.findOne(id);
   }
 
   @Patch(':id')
   @ApiOperation({ summary: 'Обновить упражнение' })
   update(
-    @Param('id', ParseUUIDPipe) id: string,
+    @Param('id', ParseUUIDPipe) id:  number,
     @Body() dto: UpdateExerciseDto,
   ) {
     return this.service.update(id, dto);
@@ -48,7 +48,7 @@ export class ExercisesController {
 
   @Delete(':id')
   @ApiOperation({ summary: 'Удалить упражнение' })
-  remove(@Param('id', ParseUUIDPipe) id: string) {
+  remove(@Param('id', ParseUUIDPipe) id:  number) {
     return this.service.remove(id);
   }
 }

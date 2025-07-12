@@ -3,7 +3,7 @@ import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 export class CreateExerciseSlotTemplateDto {
   @ApiProperty({ type: String, description: 'ID упражнения' })
-  exerciseId: string;
+  exerciseId: number;
 
   @ApiPropertyOptional({
     type: String,

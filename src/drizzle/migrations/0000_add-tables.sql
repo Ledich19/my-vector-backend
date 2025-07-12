@@ -5,7 +5,7 @@ CREATE TYPE "public"."input_format_enum" AS ENUM('repetition', 'duration', 'text
 CREATE TYPE "public"."practice_type_enum" AS ENUM('physical', 'cognitive', 'verbal', 'reflective');--> statement-breakpoint
 CREATE TYPE "public"."question_type_enum" AS ENUM('scale', 'single-choice', 'multiple-choice', 'text');--> statement-breakpoint
 CREATE TABLE "emotion_entries" (
-	"id" integer PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"user_id" integer NOT NULL,
 	"emotion_id" integer NOT NULL,
 	"situation" text NOT NULL,
@@ -21,14 +21,14 @@ CREATE TABLE "user_role" (
 );
 --> statement-breakpoint
 CREATE TABLE "users" (
-	"id" integer PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"email" text,
 	"role_id" integer,
 	CONSTRAINT "users_email_unique" UNIQUE("email")
 );
 --> statement-breakpoint
 CREATE TABLE "emotions" (
-	"id" integer PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"value" "emotion_enum" NOT NULL,
 	"label" text NOT NULL,
 	"icon" text DEFAULT '',
@@ -37,7 +37,7 @@ CREATE TABLE "emotions" (
 );
 --> statement-breakpoint
 CREATE TABLE "protocols" (
-	"id" integer PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"name" text NOT NULL,
 	"description" text,
 	"content" text NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE "protocols" (
 );
 --> statement-breakpoint
 CREATE TABLE "exercises" (
-	"id" integer PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"title" text NOT NULL,
 	"description" text,
 	"exercise_type" "exercise_enum" NOT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE "exercises" (
 );
 --> statement-breakpoint
 CREATE TABLE "exercise_logs" (
-	"id" integer PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"user_id" integer NOT NULL,
 	"exercise_id" integer NOT NULL,
 	"user_plan_id" integer,
@@ -67,20 +67,20 @@ CREATE TABLE "exercise_logs" (
 );
 --> statement-breakpoint
 CREATE TABLE "plan_templates" (
-	"id" integer PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"title" text NOT NULL,
 	"description" text,
 	"repetitions" integer
 );
 --> statement-breakpoint
 CREATE TABLE "scheduled_day_templates" (
-	"id" integer PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"plan_template_id" integer NOT NULL,
 	"day_number" integer NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE "exercise_slot_templates" (
-	"id" integer PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"scheduled_day_template_id" integer NOT NULL,
 	"exercise_id" integer NOT NULL,
 	"time" text,
@@ -89,7 +89,7 @@ CREATE TABLE "exercise_slot_templates" (
 );
 --> statement-breakpoint
 CREATE TABLE "user_plans" (
-	"id" integer PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"template_id" integer NOT NULL,
 	"user_id" integer NOT NULL,
 	"start_date" timestamp NOT NULL,
@@ -97,7 +97,7 @@ CREATE TABLE "user_plans" (
 );
 --> statement-breakpoint
 CREATE TABLE "user_scheduled_days" (
-	"id" integer PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"user_plan_id" integer NOT NULL,
 	"template_day_id" integer NOT NULL,
 	"date" timestamp,
@@ -106,7 +106,7 @@ CREATE TABLE "user_scheduled_days" (
 );
 --> statement-breakpoint
 CREATE TABLE "user_exercise_slots" (
-	"id" integer PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"user_scheduled_day_id" integer NOT NULL,
 	"template_slot_id" integer,
 	"exercise_id" integer,
@@ -117,7 +117,7 @@ CREATE TABLE "user_exercise_slots" (
 );
 --> statement-breakpoint
 CREATE TABLE "surveys" (
-	"id" integer PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"title" text NOT NULL,
 	"description" text,
 	"category" text,
@@ -126,7 +126,7 @@ CREATE TABLE "surveys" (
 );
 --> statement-breakpoint
 CREATE TABLE "survey_questions" (
-	"id" integer PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"survey_id" integer NOT NULL,
 	"text" text NOT NULL,
 	"type" "question_type_enum" NOT NULL,
@@ -134,14 +134,14 @@ CREATE TABLE "survey_questions" (
 );
 --> statement-breakpoint
 CREATE TABLE "survey_answer_options" (
-	"id" integer PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"question_id" integer NOT NULL,
 	"text" text NOT NULL,
 	"value" integer NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE "survey_user_answers" (
-	"id" integer PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"result_id" integer NOT NULL,
 	"question_id" integer NOT NULL,
 	"selected_option_id" integer,
@@ -149,7 +149,7 @@ CREATE TABLE "survey_user_answers" (
 );
 --> statement-breakpoint
 CREATE TABLE "survey_results" (
-	"id" integer PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"user_id" integer NOT NULL,
 	"survey_id" integer NOT NULL,
 	"created_at" timestamp with time zone DEFAULT now(),
@@ -158,7 +158,7 @@ CREATE TABLE "survey_results" (
 );
 --> statement-breakpoint
 CREATE TABLE "survey_scoring_thresholds" (
-	"id" integer PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"survey_id" integer NOT NULL,
 	"min" integer NOT NULL,
 	"max" integer NOT NULL,

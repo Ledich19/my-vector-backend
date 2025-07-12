@@ -1,11 +1,11 @@
-import { pgTable, text, integer } from 'drizzle-orm/pg-core';
+import { pgTable, text, serial } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm';
 import { surveyQuestions } from './surveyQuestions';
 import { surveyScoringThresholds } from './surveyScoringThresholds';
 import { surveyResults } from './surveyResults';
 
 export const surveys = pgTable('surveys', {
-  id: integer('id').primaryKey(),
+  id: serial('id').primaryKey(),
   title: text('title').notNull(),
   description: text('description'),
   category: text('category'),

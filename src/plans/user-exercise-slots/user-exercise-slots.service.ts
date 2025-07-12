@@ -10,7 +10,7 @@ export class UserExerciseSlotsService {
     private readonly db: NodePgDatabase<typeof schema>,
   ) {}
 
-  // async getSlotsByDay(dayId: string) {
+  // async getSlotsByDay(dayId:  number) {
   //   // получить слоты упражнений по дню
   // }
 
@@ -18,11 +18,11 @@ export class UserExerciseSlotsService {
   //   // создать слот упражнения
   // }
 
-  // async update(id: string, data: any) {
+  // async update(id:  number, data: any) {
   //   // обновить слот упражнения
   // }
 
-  // async delete(id: string) {
+  // async delete(id:  number) {
   //   // удалить слот упражнения (логическое удаление)
   // }
 }

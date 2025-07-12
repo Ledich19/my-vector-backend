@@ -1,10 +1,10 @@
-import { pgTable, text, integer, timestamp } from 'drizzle-orm/pg-core';
+import { pgTable, text, integer, timestamp, serial } from 'drizzle-orm/pg-core';
 import { relations, sql } from 'drizzle-orm';
 import { users } from './users';
 import { emotions } from './emotions';
 
 export const emotionEntries = pgTable('emotion_entries', {
-  id: integer('id').primaryKey(),
+  id: serial('id').primaryKey(),
 
   userId: integer('user_id')
     .notNull()

@@ -24,7 +24,7 @@ export class PlanTemplatesService {
     return this.db.select().from(schema.planTemplates);
   }
 
-  async getById(id: string) {
+  async getById(id: number) {
     const plan = await this.db.query.planTemplates.findFirst({
       where: (plan) => eq(plan.id, id),
       with: {
@@ -73,7 +73,7 @@ export class PlanTemplatesService {
     });
   }
 
-  async update(id: string, data: UpdatePlanTemplateDto) {
+  async update(id: number, data: UpdatePlanTemplateDto) {
     return this.db.transaction(async (tx) => {
       // Обновить поля плана
       await tx
@@ -146,7 +146,7 @@ export class PlanTemplatesService {
       typeof schema,
       ExtractTablesWithRelations<typeof schema>
     >,
-    dayId: string,
+    dayId: number,
     slots: UpdateExerciseSlotTemplateDto[],
   ) {
     const existingSlots = await tx
@@ -193,7 +193,7 @@ export class PlanTemplatesService {
   }
   // Вспомогательная функция для синхронизации exerciseSlots одного дня
 
-  async delete(id: string) {
+  async delete(id: number) {
     await this.db
       .delete(schema.planTemplates)
       .where(eq(schema.planTemplates.id, id));
