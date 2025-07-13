@@ -1,0 +1,1 @@
+ALTER TABLE "survey_scoring_thresholds" ADD COLUMN "description" text;

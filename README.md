@@ -9,7 +9,6 @@ http://localhost:3000/api/swagger
 INSERT INTO users (id, email, role_id) VALUES
 ('550e8400-e29b-41d4-a716-446655440000', 'test@example.com', 1);
 
-
 # Документация структуры данных приложения планирования упражнений с паттерном «слоёв» (overlay)
 
 ---
@@ -32,111 +31,6 @@ INSERT INTO users (id, email, role_id) VALUES
 ## Структура данных
 
 ```ts
-
-// Тип практики — определяет направленность упражнения
-type PracticeType = 'physical' | 'cognitive' | 'verbal' | 'reflective'
-
-// Перечисление фиксированных типов упражнений
-enum ExerciseTypeEnum {
-  Strength = 'strength',
-  Cardio = 'cardio',
-  Flexibility = 'flexibility',
-  Memory = 'memory',
-  Speech = 'speech',
-  Reflection = 'reflection',
-}
-
-// === Шаблонная часть ===
-
-// Шаблон плана — неизменяемый
-type PlanTemplate = {
-  id: number
-  title: string
-  description?: string
-  days: ScheduledDayTemplate[]
-  repetitions?: number
-}
-
-// День в шаблоне
-type ScheduledDayTemplate = {
-  id: number
-  dayNumber: number
-  exerciseSlots: ExerciseSlotTemplate[]
-}
-
-// Упражнение в дне шаблона
-type ExerciseSlotTemplate = {
-  id: number
-exerciseId: number
-  time?: string
-  repetitions?: number
-  durationSeconds?: number
-}
-
-// === Пользовательская часть ===
-
-// Конкретный пользовательский план
-type UserPlan = {
-  id: number
-  templateId: number
-  userid: number
-  startDate: string
-  repetitions?: number
-}
-
-// Кастомизация дня
-type UserScheduledDay = {
-  id: number
-  userPlanId: number
-  templateDayId: number
-  date?: string
-  dayNumber?: number
-  notes?: string
-}
-
-// Кастомизация упражнения
-type UserExerciseSlot = {
-  id: number
-  userScheduledDayId: number
-  templateSlotId?: string // может отсутствовать, если это новый слот
-exerciseId?: string
-  time?: string
-  repetitions?: number
-  durationSeconds?: number
-  isDeleted?: boolean // при удалении слота из шаблона
-}
-
-// === Общие сущности ===
-
-type Exercise = {
-  id: number
-  title: string
-  description?: string
-  exerciseType: ExerciseTypeEnum
-  practiceType: PracticeType
-  inputFormat: 'repetition' | 'duration' | 'text' | 'boolean'
-}
-
-type ExerciseLog = {
-  id: number
-  userid: number
-exerciseId: number
-  userPlanId?: string
-  date: string
-  isCompleted: boolean
-  rating?: number
-  notes?: string
-  emotionId?: string
-}
-
-
-
-
-
-
-
-
-
 
 
 
@@ -248,3 +142,4 @@ exerciseId: number
   notes?: string
   emotionId?: string
 }
+```

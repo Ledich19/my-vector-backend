@@ -8,6 +8,13 @@
       "when": 1752341289087,
       "tag": "0000_add-tables",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1752413092068,
+      "tag": "0001_add-description",
+      "breakpoints": true
     }
   ]
 }

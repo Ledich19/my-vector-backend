@@ -2,16 +2,16 @@ import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 export class ExerciseSlotResponseDto {
   @ApiProperty({ type: String })
-  id:  number;
+  id: number;
 
   @ApiPropertyOptional({ type: Number, nullable: true })
   repetitions: number | null;
 
   @ApiProperty({ type: String })
-  exerciseId:  number;
+  exerciseId: number;
 
   @ApiProperty({ type: String })
-  scheduledDayTemplateId:  number;
+  scheduledDayTemplateId: number;
 
   @ApiPropertyOptional({ type: String, nullable: true })
   time: string | null;
@@ -22,10 +22,10 @@ export class ExerciseSlotResponseDto {
 
 export class ScheduledDayResponseDto {
   @ApiProperty({ type: String })
-  id:  number;
+  id: number;
 
   @ApiProperty({ type: String })
-  planTemplateId:  number;
+  planTemplateId: number;
 
   @ApiProperty({ type: Number })
   dayNumber: number;
@@ -36,7 +36,7 @@ export class ScheduledDayResponseDto {
 
 export class PlanTemplateResponseDto {
   @ApiProperty({ type: String })
-  id:  number;
+  id: number;
 
   @ApiProperty({ type: String })
   title: string;

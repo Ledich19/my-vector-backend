@@ -10,6 +10,7 @@ export const surveyScoringThresholds = pgTable('survey_scoring_thresholds', {
   min: integer('min').notNull(),
   max: integer('max').notNull(),
   label: text('label').notNull(),
+  description: text('description'),
 });
 
 export const surveyScoringThresholdsRelations = relations(

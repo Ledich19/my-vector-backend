@@ -1,0 +1,716 @@
+{
+  "title": "Опитування депресії за Бернсом",
+  "description": "Опитування для оцінки рівня депресії за шкалою Бернса",
+  "category": "depression",
+  "scoringMethod": "sum",
+  "scoringFormula": null,
+  "questions": [
+    {
+      "text": "Вам сумно або у вас поганий настрій",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Відчуваєте сум, пригніченість",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Відчуваєте бажання заплакати, сльозливість",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Відчуваєте пригнічений стан",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Відчуваєте брак грошей",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Маєте низьку самооцінку",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Відчуваєте себе ніким і непридатним",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Відчуваєте почуття провини або сорому",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Критикуєте або звинувачуєте себе",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Відчуваєте труднощі з прийняттям рішень",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Втрачаєте інтерес до членів сім’ї, друзів, колег",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Відчуваєте самотність",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Проводите менше часу з сім’єю або друзями",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Відчуваєте втрату мотивації",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Втрачаєте інтерес до роботи або інших занять",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Уникаєте роботи або інших занять",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Відчуваєте втрату задоволення і нестачу радості в житті",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Відчуваєте втому",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Маєте проблеми зі сном або, навпаки, спите занадто багато",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Маєте знижений або, навпаки, підвищений апетит",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Відчуваєте зниження інтересу до сексу",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Турбуєтесь про своє здоров’я",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Чи маєте суїцидальні думки?",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Чи хотіли б ви покінчити зі своїм життям?",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Чи плануєте ви нашкодити собі?",
+      "type": "single-choice",
+      "weight": 1,
+      "answerOptions": [
+        {
+          "text": "Ніколи",
+          "value": 0
+        },
+        {
+          "text": "Рідко",
+          "value": 1
+        },
+        {
+          "text": "Іноді",
+          "value": 2
+        },
+        {
+          "text": "Часто",
+          "value": 3
+        },
+        {
+          "text": "Дуже часто",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "thresholds": [
+    {
+      "min": 0,
+      "max": 8,
+      "label": "Немає ознак депресії",
+      "description": "Ваш емоційний стан стабільний, немає підстав для занепокоєння."
+    },
+    {
+      "min": 9,
+      "max": 16,
+      "label": "Легкі симптоми депресії",
+      "description": "Можуть спостерігатися незначні емоційні труднощі, варто звернути увагу на своє самопочуття."
+    },
+    {
+      "min": 17,
+      "max": 24,
+      "label": "Помірна депресія",
+      "description": "Рекомендується консультація з фахівцем для оцінки стану та вибору стратегії підтримки."
+    },
+    {
+      "min": 25,
+      "max": 32,
+      "label": "Виражена депресія",
+      "description": "Потрібне кваліфіковане лікування та підтримка від медичних спеціалістів."
+    },
+    {
+      "min": 33,
+      "max": 100,
+      "label": "Тяжка депресія",
+      "description": "Негайно зверніться до лікаря або психолога, ситуація вимагає термінового втручання."
+    }
+  ]
+}
