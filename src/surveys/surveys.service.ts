@@ -177,16 +177,19 @@ export class SurveysService {
   // Создание порога для оценки
 
   // Получение результатов опроса для пользователя
-  async getUserSurveyResults(userId: number, surveyId: number) {
+  async getUserSurveyResults(userId: number, surveyId?: number) {
+    const whereClause =
+      surveyId !== undefined
+        ? and(
+            eq(schema.surveyResults.userId, userId),
+            eq(schema.surveyResults.surveyId, surveyId),
+          )
+        : eq(schema.surveyResults.userId, userId);
+
     const results = await this.db
       .select()
       .from(schema.surveyResults)
-      .where(
-        and(
-          eq(schema.surveyResults.userId, userId),
-          eq(schema.surveyResults.surveyId, surveyId),
-        ),
-      )
+      .where(whereClause)
       .leftJoin(
         schema.surveyUserAnswers,
         eq(schema.surveyResults.id, schema.surveyUserAnswers.resultId),

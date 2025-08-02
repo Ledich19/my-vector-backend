@@ -1,6 +1,6 @@
 import { Inject, Injectable, NotFoundException } from '@nestjs/common';
-import { CreateEmotionEntrieDto } from './dto/create-emotion-entrie.dto';
-import { UpdateEmotionEntrieDto } from './dto/update-emotion-entrie.dto';
+import { CreateEmotionEntriesDto } from './dto/create-emotion-entries.dto';
+import { UpdateEmotionEntriesDto } from './dto/update-emotion-entries.dto';
 import { DrizzleAsyncProvider } from 'src/drizzle/drizzle.provider';
 import { NodePgDatabase } from 'drizzle-orm/node-postgres';
 import * as schema from '../drizzle/schema';
@@ -8,13 +8,13 @@ import { and, eq, sql } from 'drizzle-orm';
 import { FindEmotionEntriesQueryDto } from './dto/find-emotion-entries-query.dto';
 
 @Injectable()
-export class EmotionEntrieService {
+export class EmotionEntriesService {
   constructor(
     @Inject(DrizzleAsyncProvider)
     private readonly db: NodePgDatabase<typeof schema>,
   ) {}
 
-  async create(dto: CreateEmotionEntrieDto) {
+  async create(dto: CreateEmotionEntriesDto) {
     const [created] = await this.db
       .insert(schema.emotionEntries)
       .values(dto)
@@ -94,7 +94,7 @@ export class EmotionEntrieService {
     return result;
   }
 
-  async update(id: number, dto: UpdateEmotionEntrieDto) {
+  async update(id: number, dto: UpdateEmotionEntriesDto) {
     const [updated] = await this.db
       .update(schema.emotionEntries)
       .set(dto)

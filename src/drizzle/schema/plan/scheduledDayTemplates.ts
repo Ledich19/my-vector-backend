@@ -11,6 +11,7 @@ export const scheduledDayTemplates = pgTable(
       .notNull()
       .references(() => planTemplates.id, { onDelete: 'cascade' }),
     dayNumber: integer('day_number').notNull(),
+    repetitions: integer('repetitions'),
   },
   (table) => [
     index('idx_plan_template_id_day_number').on(table.planTemplateId),

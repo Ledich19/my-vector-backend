@@ -24,3 +24,8 @@ export * from './surveys/surveyAnswerOptions';
 export * from './surveys/surveyUserAnswers';
 export * from './surveys/surveyResults';
 export * from './surveys/surveyScoringThresholds';
+
+export * from './psyPlan/psyPlanTemplates';
+export * from './psyPlan/psyTaskTemplates';
+export * from './psyPlan/userPsyPlans';
+export * from './psyPlan/userPsyTasks';

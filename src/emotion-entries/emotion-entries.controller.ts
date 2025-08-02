@@ -8,9 +8,9 @@ import {
   Delete,
   Query,
 } from '@nestjs/common';
-import { EmotionEntrieService } from './emotion-entrie.service';
-import { CreateEmotionEntrieDto } from './dto/create-emotion-entrie.dto';
-import { UpdateEmotionEntrieDto } from './dto/update-emotion-entrie.dto';
+import { EmotionEntriesService } from './emotion-entries.service';
+import { CreateEmotionEntriesDto } from './dto/create-emotion-entries.dto';
+import { UpdateEmotionEntriesDto } from './dto/update-emotion-entries.dto';
 import {
   ApiTags,
   ApiCreatedResponse,
@@ -23,18 +23,18 @@ import { FindEmotionEntriesQueryDto } from './dto/find-emotion-entries-query.dto
 import { CountEmotionsByUserIdResponse } from './dto/count-emotions-by-user-id.response';
 import { GetEmotionEntriesResponseDto } from './dto/get-emotion-entries-response.dto';
 
-@ApiTags('emotion-entrie')
-@Controller('emotion-entrie')
-export class EmotionEntrieController {
-  constructor(private readonly emotion: EmotionEntrieService) {}
+@ApiTags('emotion-entries')
+@Controller('emotion-entries')
+export class EmotionEntriesController {
+  constructor(private readonly emotion: EmotionEntriesService) {}
 
   @Post()
   @ApiCreatedResponse({ type: EmotionEntryDTO })
   @ApiBadRequestResponse()
   create(
-    @Body() createEmotionEntrieDto: CreateEmotionEntrieDto,
+    @Body() createEmotionEntriesDto: CreateEmotionEntriesDto,
   ): Promise<EmotionEntryDTO> {
-    return this.emotion.create(createEmotionEntrieDto);
+    return this.emotion.create(createEmotionEntriesDto);
   }
 
   @Get()
@@ -70,9 +70,9 @@ export class EmotionEntrieController {
   @ApiNotFoundResponse()
   update(
     @Param('id') id: number,
-    @Body() updateEmotionEntrieDto: UpdateEmotionEntrieDto,
+    @Body() updateEmotionEntriesDto: UpdateEmotionEntriesDto,
   ) {
-    return this.emotion.update(id, updateEmotionEntrieDto);
+    return this.emotion.update(id, updateEmotionEntriesDto);
   }
 
   @Delete(':id')

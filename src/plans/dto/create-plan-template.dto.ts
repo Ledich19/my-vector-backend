@@ -22,6 +22,12 @@ export class CreateScheduledDayTemplateDto {
   @ApiProperty({ type: Number, description: 'Номер дня в плане' })
   dayNumber: number;
 
+  @ApiPropertyOptional({
+    type: Number,
+    description: 'Количество повторений дня (циклов)',
+  })
+  repetitions?: number;
+
   @ApiProperty({
     type: [CreateExerciseSlotTemplateDto],
     description: 'Слоты упражнений для дня',

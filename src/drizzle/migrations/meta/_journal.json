@@ -15,6 +15,13 @@
       "when": 1752413092068,
       "tag": "0001_add-description",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1754075993181,
+      "tag": "0002_psy-plan",
+      "breakpoints": true
     }
   ]
 }

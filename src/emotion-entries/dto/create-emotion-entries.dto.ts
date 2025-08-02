@@ -5,7 +5,7 @@ import { ApiProperty } from '@nestjs/swagger';
 import { Exclude, Expose } from 'class-transformer';
 
 @Exclude()
-export class CreateEmotionEntrieDto {
+export class CreateEmotionEntriesDto {
   @ApiProperty({ example: 'Walked in the park' })
   @IsString()
   @Expose()

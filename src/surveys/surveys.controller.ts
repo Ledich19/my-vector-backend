@@ -22,6 +22,7 @@ import { CreateSurveyAnswerOptionDto } from './dto/create-survey-answer-option.d
 import { CreateSurveyResultDto } from './dto/create-survey-result.dto';
 import { CreateScoringThresholdDto } from './dto/create-scoring-threshold.dto';
 import { CreateSurveyUserAnswerDto } from './dto/create-survey-user-answer.dto';
+import { SurveyResultDto } from './dto/survey-results.dto';
 
 @ApiTags('Surveys')
 @Controller('surveys')
@@ -144,9 +145,10 @@ export class SurveysController {
   @ApiOperation({ summary: 'Получить результаты опроса по пользователю' })
   @ApiParam({ name: 'surveyId', type: Number })
   @ApiParam({ name: 'userId', type: Number })
+  @ApiResponse({ status: 200, type: [SurveyResultDto] })
   async getUserSurveyResults(
-    @Param('surveyId', ParseIntPipe) surveyId: number,
     @Param('userId', ParseIntPipe) userId: number,
+    @Param('surveyId', ParseIntPipe) surveyId?: number,
   ) {
     return await this.surveysService.getUserSurveyResults(userId, surveyId);
   }
