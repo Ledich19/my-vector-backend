@@ -1,5 +1,12 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsString, IsNotEmpty, IsOptional, IsDateString } from 'class-validator';
+import { Type } from 'class-transformer';
+import {
+  IsString,
+  IsNotEmpty,
+  IsOptional,
+  IsDateString,
+  IsNumber,
+} from 'class-validator';
 
 export class CreateUserPsyPlanDto {
   @ApiProperty({ example: 1 })
@@ -24,4 +31,25 @@ export class CreateUserPsyPlanDto {
   @IsOptional()
   @IsString()
   description?: string;
+
+  @ApiProperty({ example: 1 })
+  @IsNotEmpty()
+  psyPlanTemplateId: number;
+
+  @Type(() => Number)
+  @IsOptional()
+  @IsNumber()
+  templateVersion?: number;
+
+  @ApiProperty({ example: 'active', required: false })
+  @IsOptional()
+  @IsString()
+  status?: string;
+
+  @ApiProperty({
+    type: String,
+    description:
+      'Источник шаблона (например, текст с заданиями в формате Markdown)',
+  })
+  source?: string;
 }

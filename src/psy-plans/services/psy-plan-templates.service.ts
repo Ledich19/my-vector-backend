@@ -1,6 +1,6 @@
 import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { psyPlanTemplates } from '../../drizzle/schema';
-import { eq } from 'drizzle-orm';
+import { desc, eq } from 'drizzle-orm';
 import { NodePgDatabase } from 'drizzle-orm/node-postgres';
 import { DrizzleAsyncProvider } from 'src/drizzle/drizzle.provider';
 import * as schema from '../../drizzle/schema';
@@ -43,8 +43,19 @@ export class PsyPlanTemplatesService {
     return result;
   }
 
-  async findAll(): Promise<PsyPlanTemplateResponseDto[]> {
-    return this.db.select().from(psyPlanTemplates);
+  async findAll({
+    limit = 10,
+    page = 1,
+  }): Promise<PsyPlanTemplateResponseDto[]> {
+    const result = await this.db.query.psyPlanTemplates.findMany({
+      with: {
+        // tasks: true,
+      },
+      limit,
+      offset: (page - 1) * limit,
+    });
+
+    return result;
   }
 
   async findOne(id: number): Promise<PsyPlanTemplateResponseDto> {

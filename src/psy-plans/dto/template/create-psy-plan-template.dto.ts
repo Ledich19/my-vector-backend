@@ -82,6 +82,12 @@ export class CreatePsyPlanTemplateDto {
   @IsOptional()
   repetitions?: number;
 
+  @ApiProperty({
+    type: String,
+    description:
+      'Источник шаблона (например, текст с заданиями в формате Markdown)',
+  })
+  source?: string;
   // @ApiProperty({
   //   description: 'Список задач для шаблона плана',
   //   type: [CreatePsyTaskTemplateDto],

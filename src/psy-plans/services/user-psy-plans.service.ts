@@ -16,7 +16,13 @@ export class UserPsyPlansService {
   ) {}
 
   async create(dto: CreateUserPsyPlanDto): Promise<UserPsyPlanResponseDto> {
-    const [result] = await this.db.insert(userPsyPlans).values(dto).returning();
+    const [result] = await this.db
+      .insert(userPsyPlans)
+      .values({
+        ...dto,
+        templateVersion: dto.templateVersion ?? 1, // ← fallback
+      })
+      .returning();
     return result;
   }
 

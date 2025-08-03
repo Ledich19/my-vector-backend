@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { PsyPlanTemplatesService } from '../services/psy-plan-templates.service';
 
@@ -13,6 +14,8 @@ import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { PsyPlanTemplateResponseDto } from '../dto/template/psy-plan-template-response.dto';
 import { CreatePsyPlanTemplateDto } from '../dto/template/create-psy-plan-template.dto';
 import { UpdatePsyPlanTemplateDto } from '../dto/template/update-psy-plan-template.dto';
+import { log } from 'console';
+import { GetPsyPlanTemplateQueryDto } from 'src/protocols/dto/get-psy-plan-template-query.dto';
 
 @ApiTags('psy-plan-templates')
 @Controller('psy-plan-templates')
@@ -41,8 +44,10 @@ export class PsyPlanTemplatesController {
     description: 'List of plan templates',
     type: [PsyPlanTemplateResponseDto],
   })
-  findAll(): Promise<PsyPlanTemplateResponseDto[]> {
-    return this.psyPlanTemplatesService.findAll();
+  findAll(
+    @Query() query: GetPsyPlanTemplateQueryDto,
+  ): Promise<PsyPlanTemplateResponseDto[]> {
+    return this.psyPlanTemplatesService.findAll(query);
   }
 
   @Get(':id')
